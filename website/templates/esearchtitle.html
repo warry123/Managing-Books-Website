@@ -1,0 +1,12 @@
+{% for book in books %}
+    <tr>
+        <td><div class="justify-center display-sideways">{{book.booksid}}</div></td>
+        <td><div class="justify-center display-sideways">{{book.title}}</div></td>
+        <td><div class="justify-center display-sideways">{{authors[loop.index0]}}</div></td>
+        <td><div class="justify-center display-sideways">{{book.publish_date}}</div></td>
+    </tr>
+{% endfor %}
+
+
+
+

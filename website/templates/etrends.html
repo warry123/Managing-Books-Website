@@ -1,0 +1,21 @@
+{% extends "ebase.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="display-sideways justify-center ehome-label">
+    <h1 class="text-label">Trends Page</h1>
+</div>
+
+<div class="display-sideways justify-center ehome-blank">
+    <a href="{{url_for('views.ehome')}}" class="a" style="margin-right:20px;"><button type="button" class="form-submit back-home">Home Page</button></a>
+    <a href="{{url_for('views.erecommendpage')}}" class="a"><button type="button" class="form-submit back-home">Recommend Book</button></a>
+</div>
+
+<div class="display-sideways justify-center align-items vertical-middle">
+    <a href="{{url_for('views.etrendGenre')}}" class="display-sideways justify-center align-items a button-left button-common"><button type="button" class="button-label">By Genre</button></a>
+    <a href="{{url_for('views.etrendBook')}}" class="display-sideways justify-center align-items a button-common"><button type="button" class="button-label">By Book</button></a>
+    <a href="{{url_for('views.etrendAuthor')}}" class="display-sideways justify-center align-items a button-right button-common"><button type="button" class="button-label">By Author</button></a>
+</div>
+
+{% endblock %}

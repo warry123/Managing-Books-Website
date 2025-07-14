@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+<div class="home-activities">
+    <button type="button" class="home-hoverbutton"><a href="{{ url_for('views.addbook') }}" class="a">Add Book</a></button>
+    <button type="button" class="home-hoverbutton"><a href="{{ url_for('views.searchbook') }}" class="a">Search By Book</a></button>
+</div>
+
+
+<form method="POST">
+    <input type="text" placeholder="Search By Author" name="q" hx-get="/search" hx-trigger="keyup changed delay:100ms" hx-target="#searchauthor" class="inputbox search-input">
+</form>
+
+<!-- show books -->
+<div id="searchauthor">
+   
+</div>
+
+{% endblock %}

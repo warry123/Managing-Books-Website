@@ -1,0 +1,63 @@
+{% extends "ebase.html" %}
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+<!-- Navigation Bar -->
+<div class="display-sideways justify-center ehome-label">
+    <h1 class="text-label">Edit Client Page</h1>
+</div>
+
+<div class="display-sideways justify-center ehome-blank">
+    <a href="{{url_for('views.eclientEmail')}}" class="a"><button type="button" class="form-submit back-home">Clients Page</button></a>
+</div>
+
+<!-- Form -->
+<form method="POST" class="display-sideways vertical-middle align-items justify-center fill-page">
+    <!-- User id section -->
+    <div class="fill-half display-sideways vertical-middle align-items justify-center">
+        <div class="fill-page">
+            <label for="userid" class="edit-label display-sideways justify-center">USER ID</label>
+            <br>
+
+            <div class="display-sideways justify-center">
+                <input type="text" name="userid" class="edit-input">
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <div class="display-sideways justify-center">
+                <button type="submit" class="home-hoverbutton edit-submit">Edit Client</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- The content section-->
+    <div class="fill-half display-sideways vertical-middle align-items justify-center">
+        <div class="fill-page">
+            <div class="fill-page display-sideways justify-center">
+                <div class="fill-page ">
+                    <label for="name" class="edit-label display-sideways justify-center">Name</label>
+                    <br>
+                    <div class="display-sideways justify-center">
+                        <input type="text" name="name" class="edit-input edit-name">
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="fill-page display-sideways justify-center">
+                <div class="fill-page">
+                    <label for="email" class="edit-label display-sideways justify-center">Email</label>
+                    <br>
+                    <div class="display-sideways justify-center">
+                        <input type="email" name="email" class="edit-input edit-email">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

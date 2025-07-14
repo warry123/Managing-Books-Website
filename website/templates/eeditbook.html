@@ -1,0 +1,75 @@
+{% extends "ebase.html" %}
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+
+<!-- Navigation Bar -->
+<div class="display-sideways justify-center ehome-label">
+    <h1 class="text-label">Edit Book Page</h1>
+</div>
+
+<div class="display-sideways justify-center ehome-blank">
+    <a href="{{url_for('views.ebooksTitle')}}" class="a"><button type="button" class="form-submit back-home">Books Page</button></a>
+</div>
+
+<!-- Form -->
+<form method="POST" class="display-sideways vertical-middle align-items justify-center fill-page">
+    <!-- User id section -->
+    <div class="fill-half display-sideways vertical-middle align-items justify-center">
+        <div class="fill-page">
+            <label for="bookid" class="edit-label display-sideways justify-center">BOOK ID</label>
+            <br>
+
+            <div class="display-sideways justify-center">
+                <input type="text" name="bookid" class="edit-input">
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <div class="display-sideways justify-center">
+                <button type="submit" class="home-hoverbutton edit-submit">Edit Book</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- The content section-->
+    <div class="fill-half display-sideways vertical-middle align-items justify-center">
+        <div class="fill-page">
+            <div class="fill-page display-sideways justify-center">
+                <div class="fill-page ">
+                    <label for="title" class="edit-label display-sideways justify-center">Title</label>
+                    <br>
+                    <div class="display-sideways justify-center">
+                        <input type="text" name="title" class="edit-input edit-name">
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="fill-page display-sideways justify-center">
+                <div class="fill-page">
+                    <label for="author" class="edit-label display-sideways justify-center">Author</label>
+                    <br>
+                    <div class="display-sideways justify-center">
+                        <input type="text" name="author" class="edit-input edit-email">
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="fill-page display-sideways justify-center">
+                <div class="fill-page">
+                    <label for="date" class="edit-label display-sideways justify-center">Publish Date</label>
+                    <br>
+                    <div class="display-sideways justify-center">
+                        <input type="text" name="date" class="edit-input edit-email">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- base.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+</head>
+<body>
+    {% for titles in title %}
+    <div class="search-content">
+        <p><b>Title:</b> {{ titles }}</p>
+        <p><b>Author: </b> {{ authors[loop.index0] }}</p>
+        <p><b>Genre: </b> {{ genres[loop.index0] }}</p>
+    </div>
+{% endfor %}
+</body>
+</html>
+
+
+

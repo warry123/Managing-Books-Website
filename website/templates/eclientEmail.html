@@ -1,0 +1,52 @@
+{% extends "ebase.html" %}
+{% block title %}Client-Name{% endblock %}
+
+
+{% block content %}
+
+
+<div class="display-sideways justify-center ehome-label">
+    <h1 class="text-label">Client Page</h1>
+</div>
+
+<div class="display-sideways justify-center ehome-blank">
+    <a href="{{url_for('views.ehome')}}" class="a"><button type="button" class="form-submit back-home">Home Page</button></a>
+</div>
+
+<div class="display-sideways ehome-activities">
+    <div style="width:70%;">
+        <form method="POST">
+            <input type="text" name="email" hx-get="/esearchemail" hx-trigger="keyup changed delay:100ms" hx-target="#client" class="inputbox search-input eclient-search">
+        </form>
+    </div>
+
+    <div style="width:30%;" class="eclient-searches display-sideways justify-center align-items">
+        <a href="{{url_for('views.eclientEmail')}}" class="a"><button type="button" class="home-hoverbutton">Search By Email</button></a>
+        <a href="{{url_for('views.eclientName')}}" class="a"><button type="button" class="home-hoverbutton" style="margin-left:27px;">Search By Name</button></a>
+    </div>
+</div>
+
+<div class="display-sideways">
+    <!-- add and edit client -->
+    <div style="width:400px;">
+        <a href="{{url_for('views.addclient')}}" class="a"><button type="button" class="add-button home-fullwidthbutton">Add Client</button></a>
+        <a href="{{url_for('views.editclient')}}" class="a"><button type="button" class="edit-button home-fullwidthbutton">Edit Client</button></a>
+    </div>
+
+    <!-- show books -->
+    <table class="table table-bordered">
+    <thead>
+            <tr>
+                <th><div class="justify-center display-sideways">User Id</div></th>
+                <th><div class="justify-center display-sideways">Email</div></th>
+                <th><div class="justify-center display-sideways">Name</div></th>
+            </tr>
+    </thead>
+    <tbody id="client">
+
+    </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+
+<div class="display-sideways vertical-middle justify-center align-items fill-page logindiv">
+    <form method="POST" class="login-contain">
+        <div class="display-sideways justify-center">
+            <h1><b>Login Page</b></h1>
+        </div>
+        <br>
+
+        <div>
+            <div class="display-sideways justify-center">
+                <label for="email">Email</label>
+            </div>
+            <input type="email" class="logininput-width" name="email">
+        </div>
+        <br>
+
+        <div>
+            <div class="display-sideways justify-center">
+                <label for="password">Password</label>
+            </div>
+            <input type="password" class="logininput-width" name="password">
+        </div>
+        <br>
+
+        <div>
+            <div class="display-sideways justify-center">
+                <label for="as">Login as</label>
+            </div>
+            <div class="display-sideways justify-center">
+                <select name="as" class="login-option">
+                    <option value="user">User</option>
+                    <option value="employee">Employee</option>
+                </select>
+            </div>
+        </div>
+        <br>
+
+        <a href="" class="a"><i><u>Forgot Password</u></i></a>
+        <br> 
+        <br>
+
+        <div class="display-sideways justify-center fill-page">
+            <button type="submit" class="login">Login</button>
+        </div>
+        <br>
+        
+        <a href="{{url_for('auth.signup')}}" class="a"><i><u>Sign Up</u></i></a>
+    </form>
+</div>
+
+{% endblock %}

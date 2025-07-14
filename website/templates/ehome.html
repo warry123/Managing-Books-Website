@@ -1,0 +1,21 @@
+{% extends "ebase.html" %}
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+
+<div class="display-sideways justify-center ehome-label">
+    <h1 class="text-label">Home Page</h1>
+</div>
+
+<div class="ehome-blank display-sideways align-items" style="padding-left:10px;">
+    <a href="{{url_for('auth.logout')}}" class="a homeicon"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+</div>
+
+<div class="display-sideways justify-center align-items vertical-middle">
+    <a href="{{url_for('views.eclientEmail')}}" class="display-sideways justify-center align-items a button-left button-common"><button type="button" class="button-label">Clients</button></a>
+    <a href="{{url_for('views.ebooksTitle')}}" class="display-sideways justify-center align-items a button-common"><button type="button" class="button-label">Books</button></a>
+    <a href="{{url_for('views.etrends')}}" class="display-sideways justify-center align-items a button-right button-common"><button type="button" class="button-label">Trends</button></a>
+</div>
+
+{% endblock %}

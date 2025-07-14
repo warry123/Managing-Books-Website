@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+<!-- Navigation Bar -->
+<div class="home-activities">
+    <button type="button" class="home-hoverbutton"><a href="{{ url_for('views.addbook') }}" class="a">Add Book</a></button>
+    <button type="button" class="home-hoverbutton"><a href="{{ url_for('views.searchauthor') }}" class="a">Search By Author</a></button>
+    <button type="button" class="home-hoverbutton"><a href="{{ url_for('views.searchbook') }}" class="a">Search By Book</a></button>
+    <!--<button type="button" class="home-hoverbutton"><a href="search internet" class="a">Search the Internet</a></button>-->
+</div>
+
+<!-- Label -->
+<h1 id="fav" class="fav-label display-sideways justify-center">Favourites</h1>
+
+<!-- Clear all Button-->
+<button type="button" class="form-submit fav-clearall">clear all</button>
+
+<!-- Book Display -->
+{% for titles in title %}
+<div class="book display-sideways search-content">
+    <div class="favourites-content">
+        <p>Title: {{ titles }}</p>
+        <p>Author: {{ authors[loop.index0] }}</p>
+        <p>Genre: {{ genres[loop.index0] }}</p>
+    </div>
+    <form method="POST" class="favourites-delete">
+        <input type="hidden" name="title" value="{{titles}}">
+        <button type="submit" class="home-deletesubmit" style="background-color:transparent !important;"><i class="fa fa-trash-o home-normal-icon" aria-hidden="true"></i></button>
+    </form>
+</div>
+{% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "ebase.html" %}
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+
+<div class="display-sideways justify-center ehome-label">
+    <h1 class="text-label">Add Book Page</h1>
+</div>
+
+<div class="display-sideways justify-center ehome-blank">
+    <a href="{{url_for('views.ebooksTitle')}}" class="a"><button type="button" class="form-submit back-home">Books Page</button></a>
+</div>
+
+
+<form method="POST">
+    <div class="display-sideways vertical-middle align-items justify-center" style="margin-left:80px;">
+        <div class="addclient form align-items">
+            <div>
+                <label for="title" class="labels justify-center display-sideways">Title</label>
+                <input type="text" name="title" class="inputbox" style="padding:10px;">
+            </div>
+            <br>
+
+            <div>
+                <label for="author" class="labels justify-center display-sideways">Author</label>
+                <input type="text" name="author" class="inputbox" style="padding:10px;">
+            </div>
+            <br>
+        
+            <div>
+                <label for="date" class="labels justify-center display-sideways">Published Date</label>
+                <input type="text" name="date" class="inputbox" style="padding:10px;">
+            </div>
+            <br>
+
+            <div class="display-sideways align-items justify-center submit-container">
+                <button type="submit" class="form-submit">Add Book</button>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

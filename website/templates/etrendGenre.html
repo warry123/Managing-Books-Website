@@ -1,0 +1,85 @@
+{% extends "ebase.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="display-sideways justify-center ehome-label">
+    <h1 class="text-label">By Genre Page</h1>
+  </div>
+  
+  <div class="display-sideways justify-center ehome-blank">
+      <a href="{{url_for('views.etrends')}}" class="a" style="margin-right:20px;"><button type="button" class="form-submit back-home">Back to Trends</button></a>
+      <a href="{{url_for('views.erecommendpage')}}" class="a"><button type="button" class="form-submit back-home">Recommend Page</button></a>
+  </div>
+  <br>
+  <br>
+  
+  <div class="display-sideways">
+  
+      <!-- Graph -->
+      <div>
+          <canvas id="linechart" width="950" height="500"></canvas>
+          <script>
+              var ctx = document.getElementById("linechart").getContext("2d");
+              var linechart = new Chart(ctx, {
+                  type: "line",
+                  data: {
+                      labels: {{ labels | safe }},
+                      datasets: [{
+                          label: "{{yaxis | safe}}",
+                          data: {{ values | safe }},
+                          fill: false,
+                          borderColor: "rgb(75, 192, 192)",
+                          lineTension: 0.1
+                      }]
+                  },
+                  options: {
+                      responsive: false
+                  }
+              });
+          </script>
+      </div>
+      <!-- right section -->
+      <div>
+          <form method="POST" class="display-sideways">
+              <label for="yaxis" class="trend-label display-sideways justify-center align-items">Y-Axis</label>
+              <select name="yaxis" class="trend-option" style="background-color:#d9d2e9;">
+                <option value="NoofUsers">Number of Users</option>
+                <option value="NoofBooks">Number of Books</option>
+                <option value="NoofAuthors">Number of Authors</option>
+              </select>
+  
+              <select name="topbottom" class="trend-option">
+                  <option value="top">Top</option>
+                  <option value="bottom">Bottom</option>
+              </select>
+  
+              <input type="number" name="genre" class="trend-input">
+              <label class="trend-label display-sideways justify-center align-items">Genres</label>
+              <!--<button type="submit" class="trend-submit">enter</button>-->
+          </form>
+          <br>
+  
+          <table class="table table-bordered table-striped">
+              <thead>
+                  <tr>
+                      <th><div class="display-sideways justify-center">Genre</div></th>
+                      <th><div class="display-sideways justify-center">No of Users</div></th>
+                      <th><div class="display-sideways justify-center">No of Authors</div></th>
+                      <th><div class="display-sideways justify-center">No of Books</div></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for g in genres %}
+                  <tr>
+                      <td><div class="display-sideways justify-center">{{g}}</div></td>
+                      <td><div class="display-sideways justify-center">{{users[loop.index0]}}</div></td>
+                      <td><div class="display-sideways justify-center">{{books[loop.index0]}}</div></td>
+                      <td><div class="display-sideways justify-center">{{authors[loop.index0]}}</div></td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+      </div>
+  </div>
+{% endblock %}

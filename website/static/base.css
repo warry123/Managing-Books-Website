@@ -1,0 +1,536 @@
+/*general css*/
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.display-sideways{
+    display:flex;
+}
+
+.justify-center{
+    justify-content:center;
+}
+
+.align-items{
+    align-items:center;
+}
+
+.fill-page{
+    width:100%;
+}
+
+.fill-half{
+    width:50%;
+}
+
+.error{
+    background-color:red;
+}
+
+.success{
+    background-color:green;
+}
+
+/*Login and Sign up page*/
+
+.logindiv{
+    background-color:#6d9eeb;
+    height:805px !important;
+}
+
+.login-contain{
+    padding:50px;
+    background-color:white;
+    border:2px solid black;
+    border-radius:20px;
+    width:30%;
+    margin-top:10px;
+}
+
+.logininput-width{
+    width:100%;
+    background-color:#f8fcff;
+    border:2px solid #595959;
+    border-radius:7px;
+    padding:12px;
+    height:60px;
+}
+
+.login-option{
+    padding:10px;
+    border:2px solid black;
+    background-color:#d3cae8;
+}
+
+.login{
+    background-color:transparent;
+    border:2px solid black;
+    border-radius:7px;
+    padding-top:7px;
+    padding-bottom:7px;
+    margin-right:7px;
+    width:100% !important;
+    height:60px;
+}
+
+.login:hover{
+    background-color:#d9ead3;
+    border:2px solid black;
+    border-radius:7px;
+    padding-top:7px;
+    padding-bottom:7px;
+    margin-right:7px;
+    width:100% !important;
+    height:60px;
+}
+
+.signup-input{
+    height:50px;
+    border:3px solid black;
+    margin-bottom:10px;
+    background-color: #ebfcff;
+    color:black;
+    padding-left:5px;
+}
+
+/* HOME PAGE*/
+/*==================*/
+
+
+.home-heading{
+    background-color:#0097a7;
+    height: 50px;
+    padding-top:8px;
+}
+
+.homeicon{
+    margin-left:8px;
+}
+
+.fa.fa-home{
+    font-size:35px;
+}
+
+.fa.fa-sign-out{
+    font-size:35px ; 
+}
+
+
+.home-activities{
+    background-color:#b2dfee;
+    height: 70px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+/* for addbook, search by author buttons */
+.home-hoverbutton{
+    background-color:transparent;
+    border:2px solid black;
+    border-radius:5px;
+    width:150px;
+    padding-top:7px;
+    padding-bottom:7px;
+    margin-right:7px;
+}
+
+
+.home-hoverbutton:hover{
+    background-color:white;
+    border:2px solid black;
+    border-radius:5px;
+    width:150px;
+    padding-top:7px;
+    padding-bottom:7px;
+    margin-right:7px;
+}
+
+
+.home-split {
+    display:flex;
+    border:1px solid black;
+    height:500px;
+}
+
+
+.home-table{
+    width:75%
+}
+
+.home-deletesubmit{
+    background-color:white; 
+    border:0px;
+}
+
+.home-normal-icon{
+    font-size:25px;
+}
+
+/* To allow recommendations */
+.switch {
+    --input-focus: #2d8cf0;
+    --bg-color: #fff;
+    --bg-color-alt: #666;
+    --main-color: #323232;
+    --input-out-of-focus: #ccc;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 70px;
+    height: 36px;
+    transform: translateX(calc(50% - 10px));
+  }
+  
+.toggle {
+    opacity: 0;
+}
+
+.slider {
+    box-sizing: border-box;
+    border-radius: 100px;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--input-out-of-focus);
+    transition: 0.3s;
+}
+
+.slider:before {
+    content: "off";
+    box-sizing: border-box;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: 2px;
+    bottom: 1px;
+    border: 2px solid var(--main-color);
+    border-radius: 100px;
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 25px;
+    transition: 0.3s;
+}
+
+.toggle:checked + .slider {
+    background-color: var(--input-focus);
+    transform: translateX(-32px);
+}
+
+.toggle:checked + .slider:before {
+    content: "on";
+    transform: translateX(32px);
+}
+
+#toggle-button{
+    display:none;
+}
+
+
+.home-right{
+    text-align:center;
+    width:25%;
+}
+
+#home-recommendation{
+    padding:5px;
+    background-color:   #d0e0e3;
+}
+
+
+.home-fullwidthbutton{
+    width:100%;
+    margin-left:0;
+    margin-right:0;
+    padding-left:0;
+    padding-right:0;
+    display:block;
+    text-align:center;
+}
+
+
+.a{
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.recommend-button{
+    background-color:#34b7eb;
+    border-radius:100px;
+    border:2px solid #b6f0d3;
+    height:35px;
+    margin-left:20px;
+}
+
+/* Add Book Page*/
+/*==================*/
+
+.vertical-middle{
+    height: 80vh;
+}
+
+.form{
+    width:700px;
+}
+
+.labels{
+    width:100%;
+    margin-right:30px;
+    font-weight:bold;
+    font-size:20px;
+}
+
+.inputbox{
+    width:100%;
+    height:50px;
+    border-radius:8px;
+    border:1px solid black;
+    background-color:#b2dbff;
+}
+
+.submit-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+}
+
+.form-submit{
+    align-self:center;
+    padding:8px;
+    background-color:#84bfd6;
+    border:3px solid #eeeeee;
+    border-radius:8px;
+    font-size:20px;
+}
+
+/* Search*/
+/*==================*/
+
+.search-input{
+    margin-top:20px;
+    width:90%;
+    background-color:#cfe2f3;
+    color:black;
+    padding:14px;
+    margin-left:60px;
+}
+
+.search-content{
+    font-size:20px;
+    width:90%;
+    margin:50px;
+    padding:10px;
+    background-color:#d5edec;
+    padding-top:14px;
+}
+
+/* Favourites */
+/*==================*/
+
+.fav-label{
+    font-weight: bold;
+    font-size:50px;
+    color:#032969;
+    margin-top:20px;
+}
+
+.fav-clearall{
+    background-color:#fadfdf;
+    margin-left:50px;
+}
+
+.favourites-content{
+    width:500px;
+}
+
+.favourites-delete{
+    margin-left:1040px;
+    margin-top:40px;
+}
+
+
+
+
+
+
+/* Employee Home */
+/*==================*/
+
+.ehome-label{
+    width:100%;
+    background-color:#d9d2e9;
+    padding:10px;
+}
+
+.text-label{
+    font-weight:bold;
+    font-size:60px;
+}
+
+.ehome-blank{
+    background-color:#eeeeee;
+    height:80px;
+    width:100%;
+}
+
+.button-common{
+    padding:20px;
+    background-color:#cae4ff;
+    border-radius:100px;
+    border:2px solid black;
+    width:400px;
+    height:400px;
+}
+
+.button-left{
+    margin-right:80px;
+    background-color:#c9daf8 !important;
+}
+
+.button-right{
+    margin-left:80px;
+    background-color:#cfe2f3 !important;
+}
+
+.button-label{
+    background-color:transparent;
+    border:none;
+    font-size:40px;
+    color:#301934;
+    font-weight:bold;
+}
+
+
+/* Clients */
+/*==================*/
+
+.back-home{
+    margin-top:15px;
+    background-color:transparent;
+    border:2px solid black;
+}
+
+.back-home:hover{
+    margin-top:15px;
+    background-color:white;
+    border:2px solid black;
+}
+
+.eclient-search{
+    width:100%;
+    margin-left:10px !important;
+    background-color:white !important;
+    border:2px solid black;
+}
+
+.ehome-activities{
+    background-color: #f1e5ea;
+    height:80px;
+    width:100%;
+}
+
+.eclient-searches{
+    padding-left:40px;
+}
+
+.add-button{
+    padding:8px;
+    background-color:#d2f8ff;
+    height:50px;
+    border:none;
+}
+
+.edit-button{
+    padding:8px;
+    background-color:#b3d5db;
+    height:50px;
+    border:none;
+}
+
+/* Add and Edit Clients */
+/*==================*/
+
+.addclient{
+    margin-right:100px;
+}
+
+.genre-label{
+    font-weight:bold;
+}
+
+.genres{
+    padding:10px;
+    border:3px solid black;
+    margin:15px;
+    width:100%;
+    height:70px;
+}
+
+.edit-input{
+    width:80%;
+    height:50px;
+    border:1px solid black;
+    border-radius:10px;
+    background-color:#fff2cc;
+}
+
+.edit-label{
+    font-size:20px;
+    font-weight:bold;
+}
+
+.edit-submit{
+    width:80%;
+    height:50px;
+}
+
+.edit-submit:hover{
+    width:80%;
+    height:50px;
+}
+
+.edit-name{
+    background-color:#c9daf8;
+}
+
+.edit-email{
+    background-color:#a4c2f4;
+}
+
+
+/* trend-author */
+/*==================*/
+
+.trend-label{
+    width:80px;
+    font-weight:bold;
+    font-size:18px;
+    padding:10px;
+}
+
+.trend-option{
+    padding:10px;
+    border-radius:0px;
+    border:1px solid black;
+    margin-right:24px;
+}
+
+.trend-input{
+    background-color:#eeeeee;
+    border:1px solid #eeeeee;
+    border-radius:10px;
+    width:70px;
+}

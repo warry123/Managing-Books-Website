@@ -1,0 +1,52 @@
+{% extends "ebase.html" %}
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+
+<div class="display-sideways justify-center ehome-label">
+    <h1 class="text-label">Add Client Page</h1>
+</div>
+
+<div class="display-sideways justify-center ehome-blank">
+    <a href="{{url_for('views.eclientEmail')}}" class="a"><button type="button" class="form-submit back-home">Clients Page</button></a>
+</div>
+
+
+<form method="POST">
+    <div class="display-sideways vertical-middle align-items justify-center">
+        <div class="addclient form align-items">
+            <div>
+                <label for="name" class="labels justify-center display-sideways">Name</label>
+                <input type="text" name="name" class="inputbox" style="padding:10px;">
+            </div>
+            <br>
+
+            <div>
+                <label for="email" class="labels justify-center display-sideways">Email</label>
+                <input type="email" name="email" class="inputbox" style="padding:10px;">
+            </div>
+            <br>
+        
+            <div>
+                <label for="password" class="labels justify-center display-sideways">Password</label>
+                <input type="password" name="password" class="inputbox" style="padding:10px;">
+            </div>
+            <br>
+        </div>
+
+        <div class="justify-center">
+            <h2 class="genre-label" style="align-self:center;">Genres of Interest</h2>
+            {% for i in range(3)%}
+                <input type="text" name="genre{{i+1}}" placeholder="genre{{i+1}}" class="genres">
+                <br>
+            {% endfor %}
+            <div class="display-sideways align-items justify-center submit-container">
+                <button type="submit" class="form-submit">Add Client</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+{% endblock %}

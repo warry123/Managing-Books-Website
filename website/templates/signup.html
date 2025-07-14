@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+
+<div class="display-sideways vertical-middle justify-center align-items fill-page logindiv">
+    <form method="POST" class="login-contain">
+        <div class="display-sideways justify-center">
+            <h1><b>Sign Up Page</b></h1>
+        </div>
+        <br>
+
+        <div>
+            <div class="display-sideways justify-center">
+                <label for="email">Email</label>
+            </div>
+            <input type="email" class="logininput-width" name="email">
+        </div>
+        <br>
+
+        <div>
+            <div class="display-sideways justify-center">
+                <label for="password1">Password</label>
+            </div>
+            <input type="password" class="logininput-width" name="password1">
+        </div>
+        <br>
+
+        <div>
+            <div class="display-sideways justify-center">
+                <label for="password2">Confirm Password</label>
+            </div>
+            <input type="password" class="logininput-width" name="password2">
+        </div>
+        <br>
+
+        <div>
+            <div class="display-sideways justify-center">
+                <label for="name">Name</label>
+            </div>
+            <input type="text" class="logininput-width" name="name">
+        </div>
+        <br>
+
+        <div>
+            <div class="display-sideways justify-center align-items">
+                <label for="as" style="margin-right:20px;">Sign up as</label>
+                <select name="as" class="login-option">
+                    <option value="user">User</option>
+                    <option value="employee">Employee</option>
+                </select>
+            </div>
+        </div>
+        <br>
+
+        <div class="display-sideways justify-center fill-page">
+            <button type="submit" class="login">Sign Up</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "ebase.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="display-sideways justify-center ehome-label">
+    <h1 class="text-label">Recommend Page</h1>
+</div>
+
+<div class="display-sideways justify-center ehome-blank">
+    <a href="{{url_for('views.etrends')}}" class="a"><button type="button" class="form-submit back-home">Back to Trends</button></a>
+</div>
+
+
+<form method="POST">
+    <div class="display-sideways vertical-middle align-items justify-center">
+        <div class="addclient form align-items">
+            <div>
+                <label for="title" class="labels justify-center display-sideways">Title</label>
+                <input type="text" name="title" class="inputbox" style="padding:10px;">
+            </div>
+            <br>
+
+            <div>
+                <label for="author" class="labels justify-center display-sideways">Author</label>
+                <input type="text" name="author" class="inputbox" style="padding:10px;">
+            </div>
+            <br>
+        </div>
+
+        <div class="justify-center">
+            <h2 class="genre-label" style="align-self:center;">Targetted Users</h2>
+            {% for i in range(3) %}
+                <input type="number" name="userid{{i+1}}" placeholder="userid{{i+1}}" class="genres">
+                <br>
+            {% endfor %}
+            <br>
+            
+            <div class="display-sideways align-items justify-center submit-container">
+                <button type="submit" class="form-submit" style="border:0px; background-color:#7f87ba; border-radius:2px;">Recommend</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

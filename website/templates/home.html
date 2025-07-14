@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+
+<div class="home-activities">
+    <button type="button" class="home-hoverbutton"><a href="{{ url_for('views.addbook') }}" class="a">Add Book</a></button>
+    <button type="button" class="home-hoverbutton"><a href="{{ url_for('views.searchauthor') }}" class="a">Search By Author</a></button>
+    <button type="button" class="home-hoverbutton"><a href="{{ url_for('views.searchbook') }}" class="a">Search By Book</a></button>
+    <!--<button type="button" class="home-hoverbutton"><a href="search internet" class="a">Search the Internet</a></button>-->
+</div>
+<div class="home-split">
+    <div class="home-table">
+        <table class="table table-bordered">
+            <thead class="">
+                <tr>
+                    {% for a in authors %}
+                    <th scope="col">
+                        <div class="display-sideways">
+                            <h5 style="padding-right:5px;">{{a.name}}</h5>
+                            <form method="POST">
+                                <input type="hidden" name="formhome" value="formdelete">
+                                <input type="hidden" name="delete" value="{{a.name}}">
+                                <button type="submit" class="home-deletesubmit"><i class="fa fa-trash-o home-normal-icon" aria-hidden="true"></i></button>
+                            </form>
+                            <form method="POST">
+                                <input type="hidden" name="formhome" value="formbestauthor">
+                                <input type="hidden" name="bestauthor" value="{{a.name}}">
+                                <button type="submit" class="home-deletesubmit"><i class="fa fa-user home-normal-icon" aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+                    </th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for t in total %}
+                <tr>
+                    {% for j in range(length) %}
+                    <td scope="row">
+                        <div class="display-sideways">
+                            <p>{{t[loop.index0]}}</p>
+
+                            <!--make sure empty books does not have star option-->
+                            {% if t[loop.index0] != "" %}
+                            <form method="POST">
+                                <input type="hidden" name="formhome" value="formstar">
+                                <input type="hidden" name="fav" value="{{t[loop.index0]}}">
+                                <button type="submit" class="home-deletesubmit"><i class="fa fa-star home-normal-icon" aria-hidden="true"></i></button>
+                            </form>
+                            {% endif %}
+
+                        </div>
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="home-right">
+
+        <!-- switch toggler -->
+        <div class="display-sideways align-items" style="padding:7px; justify-content:center">
+            <h6 style="margin-right:7px;">Allow Recommendations</h6>
+            <form method="POST" style="margin-left:7px;" class="display-sideways align-items">
+                <input type="hidden" name="formhome" value="formallowrecommend">
+                <label class="switch">
+                    <input checked="" type="checkbox" class="toggle" name="allowrecommend">
+                    <span class="slider"></span>
+                    <span class="card-side"></span>
+                </label>
+                <button type="submit" class="recommend-button">ok</button>
+            </form>
+        </div>
+
+        <!-- Recommendation Page -->
+        {% if allow == 1%}
+        <div id="home-recommendation">
+            <h5>Today's Recommendation</h5>
+            <img src="">
+            <p>Title: {{title}}</p>
+            <p>Author: {{author}}</p>
+        </div>
+        {% endif %}
+
+
+        <!-- Favourites and Best Authors Page -->
+        <button type="button" class="btn btn-warning home-fullwidthbutton"><a href="{{ url_for('views.favourites') }}" class="a">Favourites</a></button>
+        <button type="button" class="btn btn-info home-fullwidthbutton"><a href="{{ url_for('views.bestauthors') }}" class="a">Best Authors</a></button>
+    </div>
+</div>
+
+
+{% endblock %}

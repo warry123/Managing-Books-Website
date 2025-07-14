@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+
+<div class="display-sideways vertical-middle justify-center align-items fill-page logindiv">
+    <form method="POST" class="login-contain" style="width:700px; padding:80px;">
+        <div class="display-sideways justify-center fill-page">
+            <div class="fill-half" style="margin-right:20px;">
+                <div class="display-sideways justify-center">
+                    <h4><i><b>Genres of Interest</b></i></h4>
+                </div>
+                <hr style="background-color:black; border-width:2px;">
+
+                {% for i in range(3)%}
+                <div class="display-sideways justify-center">
+                    <input type="text" name="genre{{i+1}}" placeholder="genre{{i+1}}" class="signup-input fill-page">
+                    <br>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <div class="fill-half">
+                <div class="display-sideways justify-center">
+                    <h4><i><b>Authors of Interest</b></i></h4>
+                </div>
+                <hr style="background-color:black; border-width:2px;">
+
+                {% for i in range(3)%}
+                <div class="display-sideways justify-center">
+                    <input type="text" name="authors{{i+1}}" placeholder="author{{i+1}}" class="signup-input fill-page" style="background-color:#fffafc;">
+                    <br>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <br>
+
+        <div class="display-sideways justify-center">
+            <button type="submit" class="login" style="width:50% !important;">Sign Up</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

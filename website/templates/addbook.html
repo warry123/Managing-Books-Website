@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+<div class="home-activities">
+    <button type="button" class="home-hoverbutton"><a href="{{ url_for('views.searchauthor') }}" class="a">Search By Author</a></button>
+    <button type="button" class="home-hoverbutton"><a href="{{ url_for('views.searchbook') }}" class="a">Search By Book</a></button>
+</div>
+
+<div class="display-sideways justify-center align-items vertical-middle">
+    <form method="POST" class="form align-items">
+            <div class="">
+                <label for="title" class="labels justify-center display-sideways">Title</label>
+                <input type="text" name="title" class="inputbox">
+            </div>
+            <br>
+
+            <div class="">
+                <label for="author" class="labels justify-center display-sideways">Author</label>
+                <input type="text" name="author" class="inputbox">
+            </div>
+            <br>
+
+            <div class="">
+                <label for="date" class="labels justify-center display-sideways">Publish Date</label>
+                <input type="text" name="date" class="inputbox">
+            </div>
+            <br>
+
+            <div class="">
+                <label for="genre" class="labels justify-center display-sideways">Genre</label>
+                <input type="text" name="genre" class="inputbox">
+            </div>
+            <br>
+
+            <div class="submit-container">
+                <button type="submit" class="form-submit">Add Book</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
